@@ -8,12 +8,13 @@ import Login from './src/components/LoginScreen/Login';
 import { auth } from './src/services/firebase/autentication/Auth';
 import { onAuthStateChanged } from 'firebase/auth';
 import Register from './src/components/RegisterScreen/Register';
+import TesteFire from './src/services/firebase/firestore/firestore';
 
 
 export default function App() {
   
   return(
-    <AppNavigation></AppNavigation>
+    <TesteFire></TesteFire>
   )
 }
 
