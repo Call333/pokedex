@@ -33,6 +33,7 @@ export default function PokeApi(props) {
     let [isso, setIsso] = useState([])
 
 
+    
     // console.log(agr);
 
     let [limit] = useState(props.limitePoke) // limite de pokemons por pesquisa

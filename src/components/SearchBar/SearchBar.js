@@ -31,11 +31,11 @@ function SearchBar(props) {
             return val
           }
         }).map((poke, index) => {
-          if (poke.tipos.length > 1) {
+          if (poke.tipos.length > 1) {// pokemons que possuem 2 tipos
             return (
               <CardPoke key={poke.id} id={poke.id} nome={poke.nome} types={poke.tipos} photo={poke.photoURL}></CardPoke>
             )
-          } else {
+          } else { // pokemons que possuem apenas 1 tipo
             return (
               <CardPoke key={poke.id} id={poke.id} nome={poke.nome} types={poke.tipos} photo={poke.photoURL}></CardPoke>
             )
