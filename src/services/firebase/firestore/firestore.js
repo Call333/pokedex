@@ -10,7 +10,7 @@ const db = getFirestore(app)
 export default function TesteFire(){
     
     const addPoke = () => {
-        setDoc(doc(db, "pokemons1", "IO"), {
+        setDoc(doc(db, "pokemons", "IO"), {
             name: "Bulbasaur",
             number: "#056",
             types: ['grass', 'poison']
