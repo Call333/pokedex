@@ -53,7 +53,7 @@ export default function PokeApi(props) {
 
     let urlUnique = 'https://pokeapi.co/api/v2/pokemon/1'
 
-    // console.log(pokemons)
+    console.log(pokemons)
 
     // console.log(isso);
  

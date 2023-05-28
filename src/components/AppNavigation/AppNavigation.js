@@ -8,6 +8,7 @@ import Home from '../Home/Home'
 import Pokedex from '../Pokedex/Pokedex';
 import ApiProvider from '../contexts/myContext';
 import Register from '../RegisterScreen/Register';
+import Favorites from '../Favorites/Favorites';
 
 const Stack = createNativeStackNavigator();
 
@@ -20,6 +21,7 @@ export default function AppNavigation() {
                     <Stack.Screen name='Cadastro de Usuário' component={Register} />
                     <Stack.Screen name="Generations" component={Home} />
                     <Stack.Screen name="Pokedex" component={Pokedex} options={{ headerShown: true }} />
+                    <Stack.Screen name='Favoritos' component={Favorites} />
                 </Stack.Navigator>
             </ApiProvider>
         </NavigationContainer>

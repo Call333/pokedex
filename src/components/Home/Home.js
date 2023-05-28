@@ -1,6 +1,6 @@
 import { View, StyleSheet, TouchableOpacity, Text } from "react-native";
 
-import {useState} from 'react'
+import { useState } from 'react'
 
 import CardGeneration from "../CardGeneration/CardGeneration";
 
@@ -20,6 +20,10 @@ function Home({ navigation }) {
     const user = auth.currentUser;
     console.log(auth);
 
+    function irFavoritos(){
+        navigation.navigate('Favoritos')
+    }
+
     function deslogar() {
         auth.signOut()
         navigation.replace('Login')
@@ -27,9 +31,14 @@ function Home({ navigation }) {
 
     return (
         <View style={styles.container1}>
-            <TouchableOpacity style={styles.buttonLogin} onPress={deslogar}>
-                <Text style={{ color: '#000', fontSize: '1.5em', }}>Sair</Text>
-            </TouchableOpacity>
+            <View style={{display: 'flex', flexDirection: 'row',}}>
+                <TouchableOpacity style={styles.buttonLogin} onPress={deslogar}>
+                    <Text style={{ color: '#000', fontSize: '1.5em', }}>Sair</Text>
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.buttonLogin} onPress={irFavoritos}>
+                    <Text style={{ color: '#000', fontSize: '1.5em', }}>Favoritos</Text>
+                </TouchableOpacity>
+            </View>
             <CardGeneration navigation={navigation} limitPoke={151} offsetPoke={0} generation={'1º Geração'} urlPhoto={'https://cdn.ome.lt/7tKZxleB7lUO1JuJtuPU7vWZirg=/770x0/smart/uploads/conteudo/fotos/Pokemon-G1-610x322.jpg'}></CardGeneration>
             <CardGeneration navigation={navigation} limitPoke={100} offsetPoke={151} generation={'2º Geração'} urlPhoto={'https://cdn.ome.lt/uM5rsW4WGpgHatmlImq16J76fgw=/770x0/smart/uploads/conteudo/fotos/Pokemon-G2-610x325.jpg'}></CardGeneration>
             <CardGeneration navigation={navigation} limitPoke={135} offsetPoke={251} generation={'3º Geração'} urlPhoto={'https://cdn.ome.lt/9l_1eVO3MWqTZbC-9NEcgu9Ko20=/770x0/smart/uploads/conteudo/fotos/Pokemon-G3-610x325.jpg'}></CardGeneration>

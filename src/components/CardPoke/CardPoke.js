@@ -4,7 +4,7 @@ import { Pokemon } from "../../services/Pokemon";
 
 import { auth } from "../../services/firebase/autentication/Auth";
 import { db } from './../../services/firebase/firestore/firestore'
-import { setDoc, doc } from "firebase/firestore";
+import { setDoc, doc, serverTimestamp } from "firebase/firestore";
 import { useEffect, useState } from "react";
 
 function CardPoke(props) {
@@ -30,14 +30,16 @@ function CardPoke(props) {
                 name: props.nome,
                 number: props.id,
                 types: [types[0], types[1]],
-                photoURL: props.photo
+                photoURL: props.photo,
+                timestamp: serverTimestamp()
             });
         } else {
             setDoc(doc(db, user.uid, props.nome), {
                 name: props.nome,
                 number: props.id,
                 types: [types[0]],
-                photoURL: props.photo
+                photoURL: props.photo,
+                timestamp: serverTimestamp()
             });
         }
     }
