@@ -21,8 +21,6 @@ function Favorites(props) {
   let [pokemons, setPokemons] = useState([])
   let [agr, setAgr] = useState(new Pokemon())
 
-  const [types] = useState('cavalo')
-
   const pegaOsPokemons = (pokeNoFire) => {
     let pokemon = new Pokemon();
 
@@ -57,23 +55,6 @@ function Favorites(props) {
         })
     }, []
   )
-
-  const A = () => {
-    if (types.length > 1 && types != undefined) {
-      return (
-        <View style={styles.types} key={props.nome}>
-          <Text style={styles.type} ></Text>
-          <Text style={styles.type}></Text>
-        </View>
-      )
-    } else {
-      return (
-        <View style={styles.types}>
-          <Text style={styles.type}></Text>
-        </View>
-      )
-    }
-  }
 
   console.log(pokemons);
 
