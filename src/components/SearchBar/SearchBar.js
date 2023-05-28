@@ -30,17 +30,17 @@ function SearchBar(props) {
           ) {
             return val
           }
-        }).map((poke, index) => {if(poke.tipos.length > 1){
-          return (
-            <CardPoke key={index} id={poke.id} nome={poke.nome} types={poke.tipos} photo={poke.photoURL}></CardPoke>
-          )
-        }else{
-          return (
-            <CardPoke key={index} id={poke.id} nome={poke.nome} types={poke.tipos} photo={poke.photoURL}></CardPoke>
-          )
-        }
-          
-        }
+        }).map((poke, index) => {
+          if (poke.tipos.length > 1) {
+            return (
+              <CardPoke key={poke.id} id={poke.id} nome={poke.nome} types={poke.tipos} photo={poke.photoURL}></CardPoke>
+            )
+          } else {
+            return (
+              <CardPoke key={poke.id} id={poke.id} nome={poke.nome} types={poke.tipos} photo={poke.photoURL}></CardPoke>
+            )
+          }
+        } // fim da function
         )
       }
     </>

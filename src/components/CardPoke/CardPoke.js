@@ -45,8 +45,8 @@ function CardPoke(props) {
     const A = () => {
         if (types.length > 1 && types != undefined) {
             return (
-                <View style={styles.types}>
-                    <Text style={styles.type}>{types[0]}</Text>
+                <View style={styles.types} key={props.nome}>
+                    <Text style={styles.type} >{types[0]}</Text>
                     <Text style={styles.type}>{types[1]}</Text>
                 </View>
 
