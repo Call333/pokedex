@@ -9,7 +9,6 @@ function Login({ navigation }) {
     const [email, setEmail] = useState('')
     const [pass, setPass] = useState('')
     const [user, setUser] = useState(auth.currentUser)
-    console.log(user);
 
     function logarConta() {
         signInWithEmailAndPassword(auth, email, pass)
@@ -99,8 +98,8 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
     TextInputs: {
-        height: '3em',
-        width: '20em',
+        height: '3.3em',
+        width: '22em',
         borderWidth: 0.2,
         borderRadius: '0.7em',
         margin: '0.5em',
@@ -123,6 +122,6 @@ const styles = StyleSheet.create({
     },
     containerImage: {
         marginTop: '5em',
-        marginBottom: '5em'
+        marginBottom: '4em'
     }
 });

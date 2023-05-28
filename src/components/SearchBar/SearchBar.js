@@ -8,33 +8,41 @@ function SearchBar(props) {
   const [search, setSearch] = useState('')
   let [itens, setI] = useState(props.isso)
 
-  console.log(search);  
   return (
     <>
       <View style={styles.container}>
         <View style={styles.searchIcon}>
-        {/* <EvilIcons name="search" size={30} color="black" /> */}
-      </View>
+          {/* <EvilIcons name="search" size={30} color="black" /> */}
+        </View>
         <TextInput
           style={styles.searchBar}
           placeholder="Pesquise..."
           onChangeText={(text) => setSearch(text)}
         />
       </View>
-        {
-          itens.filter((val) => {
-            if (search === '') {
-              return val
-            } else if (
-              (val.nome.toLowerCase().includes(search.toLocaleLowerCase())) || 
-              (val.id.toString().toLowerCase().includes(search.toLocaleLowerCase()))
-              ) {
-              return val
-            }
-          }).map((poke, index) => (
-            <CardPoke key={index} id={poke.id} nome={poke.nome} type1={poke.tipos[0]} type2={poke.tipos[1]} photo={poke.photoURL}></CardPoke>
-          ))
+      {
+        props.isso.filter((val) => {
+          if (search === '') {
+            return val
+          } else if (
+            (val.nome.toLowerCase().includes(search.toLocaleLowerCase())) ||
+            (val.id.toString().toLowerCase().includes(search.toLocaleLowerCase()))
+          ) {
+            return val
+          }
+        }).map((poke, index) => {if(poke.tipos.length > 1){
+          return (
+            <CardPoke key={index} id={poke.id} nome={poke.nome} types={poke.tipos} photo={poke.photoURL}></CardPoke>
+          )
+        }else{
+          return (
+            <CardPoke key={index} id={poke.id} nome={poke.nome} types={poke.tipos} photo={poke.photoURL}></CardPoke>
+          )
         }
+          
+        }
+        )
+      }
     </>
   );
 }

@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { StyleSheet } from 'react-native';
 
 import AppNavigation from './src/components/AppNavigation/AppNavigation';
-import Login from './src/components/LoginScreen/Login'; 
+import Login from './src/components/LoginScreen/Login';
 
 
 import { auth } from './src/services/firebase/autentication/Auth';
@@ -12,9 +12,12 @@ import TesteFire from './src/services/firebase/firestore/firestore';
 
 
 export default function App() {
-  
-  return(
-    <TesteFire></TesteFire>
+
+  return (
+    <>
+      {/* <TesteFire></TesteFire> */}
+      <AppNavigation></AppNavigation>
+    </>
   )
 }
 
